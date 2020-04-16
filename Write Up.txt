@@ -1,0 +1,61 @@
+Report of PES1201800366
+
+int avgDegree(iny **g, int n) :
+To find average degree of a vertex, we simply sum the degrees of all the vertices and divide it by the total number of vertices in the graph.
+We use 2 for loops; the first loop (i) goes through all the vertices and the second loop (j) is used to check if an edge exists between the other vertices.
+If it exists (g[i][j]==1), then we add it to the count. After the termination of both loops, we return the count, divided by the number of 
+vertices 'n'.
+
+int isRegular(int **g, int n) :
+A regular graph is one in which all vertices have the same degree. We break up this problem and do it in two parts. 
+First, we find the degree of the first vertex. To do this, we run a for loop from 0 to n-1 and check if g[0][i]==1, that is, an edge exists.
+If it does, we add it to the count. Then, we proceed to make 2 for loops - the first loop (i) goes through all the vertices and the second loop (j) 
+is used to check if an edge exists between the other vertices. If it exists (g[i][j]==1), then we add it to the count. After the termination of 
+the second loop, we check if the degree of this vertex is equal to the degree of the first vertex. If no, then we return 0. Else we continue.
+Finally after terminate both loops, we return 1, since the condition is satisfied.
+
+int isComplete(int **g, int n) :
+A complete graph is one in all vertices have edges with all the other vertices. To do this we again use two loops. The first loop (i) goes through 
+all the vertices and the second loop (j) is used to check if an edge exists between the other vertices. If it doesn't exist (g[i][j]==0), 
+then we return 0, else we continue with the execution of the loop. Finally after termination of both loops, we return 1, since all conditions
+are satisfied.
+
+
+int isCycleGraph(int **g, int n) :
+A cycle graph is one in which every vertex has degree of 2 and the graph has a ring or cycle structure. To check for this, we simply check if the 
+degree of all vertices is 2. We use 2 for loops; the first loop (i) goes through all the vertices and the second loop (j) is used to check 
+if an edge exists between the other vertices. If it exists (g[i][j]==1), then we add it to the count for vertex i. If the count is not equal to 2,
+we return 0, else we continue with the execution of the loop. After both loops terminate we return 1 since all conditions are satisfied.
+
+int isPathGraph(int **g, int n) :
+A path graph is one in which all vertices except the first and last vertex have a degree of 2, and the two vertices have a degree of 1. To do this,
+we use two counters. One for counting the vertices with degree 2 and the other for counting the vertices with degree 1. We use 2 for loops; 
+the first loop (i) goes through all the vertices and the second loop (j) is used to check if an edge exists between the other vertices.
+If it exists (g[i][j]==1), then we add it to the degree for vertex i. Finally at the termination of the inner j loop, we check if the degree is 1 or 2.
+Based on this we add it to the respective counter. Finally, at the end of both loops, we check if counter 1 is (n-2) and counter 2 is 2. If it satisfies
+we return 1, else 0.
+
+int hasEulerCkt(int **g, int n) :
+A graph has an Euler Circuit, if one can go from a single node, through all edges, and return back to the same node, without repeating an edge. An 
+Euler Circuit also has all veritices of even degree. We simply need to check for the latter condition. We use 2 for loops; the first loop (i) 
+goes through all the vertices and the second loop (j) is used to check if an edge exists between the other vertices. If it exists (g[i][j]==1), we
+add to the degree count for that vertex (i). After the termination of the inner loop, we check if the degree is even. If not, we return 0, else we
+continue with the execution of the loop. At the end of both loops, we return 1, since all conditions are satisfied.
+
+int hasEulerPath(int **g, int n) : 
+A graph has an Euler Path and not a Euler Circuit, if a path visits every edge exactly once . An Euler Path also has exactly two vertices of odd degree. 
+To solve this problem, we only check for the latter condition. We keep a count and use 2 for loops; the first loop (i) goes through all the vertices 
+and the second loop (j) is used to check if an edge exists between the other vertices. If it exists (g[i][j]==1), we add to the degree count 
+for that vertex (i). If the degree is odd, we add it to the count. After both loops terminate, we check if the count is 2;if yes,
+we return 1 else we return 0.
+
+int satifiesOresTheorem(int **g, int n) :
+Ore's Theorem states that deg(u) + deg(v) ≥ n for every pair of nonadjacent vertices u and v in the graph. To check for this, we keep a degree array.
+We use 2 for loops; the first loop (i) goes through all the vertices and the second loop (j) is used to check if an edge exists between the other vertices.
+If it exists (g[i][j]==1), then we add it to the degree count. At the end of the inner loop we add it to the degree array for vertex i. Then, we 
+check for the theorem. We again have to use two loops. The first loop (i) goes through all the vertices and the second loop (j) is used to check 
+if an edge does not exist between the other vertices. If not (g[i][j]==0), then we check for the condition that is - deg(u) + deg(v) ≥ n. If it 
+isn't satisfied, we return 0, else we continue with the execution of the loop. Finally we return 1 since all conditions are satisfied.
+
+
+
