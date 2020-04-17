@@ -6,8 +6,8 @@ A repository containing the source code for the Graph Network Assignment given a
 * Is the graph a complete graph?
 * Is the graph a cycle graph?
 * Is the graph a path graph but not a cycle graph?
-* Does the graph has an Euler circuit?
-* Does the graph has an Euler path but not an Euler circuit?
+* Does the graph have an Euler circuit?
+* Does the graph have an Euler path but not an Euler circuit?
 * Does the graph satisfy the sufficient condition of the Ore's theorem?
 
 *The assignment questions can also be found in Problem Statement.txt*
